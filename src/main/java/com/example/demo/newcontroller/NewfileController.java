@@ -12,9 +12,7 @@ public class StudentController {
 private final NewfileService service;
 public StudentController(NewfileService service) {
 this.service = service;
-
-)
-
+}
 @PostMapping
 public ResponseEntity<Student> createStudent(@Valid @RequestBodyStudent service){
 return new ResponseEntity<>(service.saveStudent(student),HttpStatus.CREATED);
@@ -28,6 +26,8 @@ public NewfileEntity getStudent(@PathVariable Long id) {
 return service.getidval(id);
 }
 @PutMapping("/(id}")
-public Student updateStudent(@PathVariable Long id,
-QValid ARonmoctRodw <tudant ctadont\f
+public Student updateStudent(@PathVariable Long id,@Valid @RequestBody Student student){
+return service.update(id, student);
+}
+}
 
