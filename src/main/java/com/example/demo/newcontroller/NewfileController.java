@@ -15,25 +15,25 @@ import com.example.demo.entity.Studententity;
 import com.example.demo.service.Studentservice;
 
 @RestController
-public class Newcontroller {
+public class NewfileController {
     @Autowired
     Studentservice src;
     @PatchMapping("/post")
-    public Studententity postdata(@RequestBody Studententity st){ //to show the only one data
+    public NewfileEntity postdata(@RequestBody NewfileEntity st){ 
         return src.savedata(st);
     }
     @GetMapping("/get")
     // list used to retrive all the data
-    public List<Studententity> getdata(){
+    public List<NewfileEntity> getdata(){
         return src.retdata();
     }
     @GetMapping("/getid/{id}")
     //particular details only taken @PathVariable is used to work for {id} 
-    public Studententity getIdVal(@PathVariable int id){
+    public NewfileEntity getIdVal(@PathVariable int id){
         return src.id(id);
     }
     @PutMapping("/update/{id}")
-    public Studententity funName (@PathVariable int id,@RequestBody Studententity st){
+    public  funName (@PathVariable int id,@RequestBody Studententity st){
     return src.ids(id,st);
 }    
 @DeleteMapping("/delete/{id}")
