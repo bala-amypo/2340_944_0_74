@@ -24,7 +24,7 @@ public class NewfileServiceImpl implements NewfileService{
  public NewfileEntity update(Long id, NewfileEntity newfile) {
 
  @Override
-public void delete(Long id) {
+ public void delete(Long id) {
 
  }
 }
