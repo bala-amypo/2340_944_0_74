@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.newcontroller;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import com.example.demo.entity.Studententity;
 import com.example.demo.service.Studentservice;
 
 @RestController
-public class Studentcontroller {
+public class Newcontroller {
     @Autowired
     Studentservice src;
     @PatchMapping("/post")
