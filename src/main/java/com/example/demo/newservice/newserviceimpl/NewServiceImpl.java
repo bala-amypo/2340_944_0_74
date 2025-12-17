@@ -28,10 +28,10 @@ public class NewfileServiceImpl implements NewfileService{
     NewfileEntity existing = getidval(id);
     existing.setName(newfile.getName());
     existing.setEmail(newfile.getEmail());
-return rep.save(existing);  NewfileEntity
+    return rep.save(existing);
  }
  @Override
  public void delete(Long id) {
-
+    rep.delete(Long id);
  }
 }
