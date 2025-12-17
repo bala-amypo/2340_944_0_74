@@ -33,11 +33,11 @@ public class NewfileController {
         return src.id(id);
     }
     @PutMapping("/update/{id}")
-    public  funName (@PathVariable int id,@RequestBody Studententity st){
+    public  funName (@PathVariable int id,@RequestBody NewfileEntity st){
     return src.ids(id,st);
 }    
 @DeleteMapping("/delete/{id}")
-public Studententity delData(@PathVariable int id){
+public NewfileEntity delData(@PathVariable int id){
     return src.ideas(id);
 }
 
