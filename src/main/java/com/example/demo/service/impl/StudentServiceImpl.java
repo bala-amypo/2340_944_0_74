@@ -1,23 +1,45 @@
-public class StudentServiceImpl implements StudentService {
+import com.example.demo.newservice.NewfileServiceImpl;
+package com.example.demo.newservice.newserviceimpl;
 
-@Override
-public StudentEntity postdata(StudentEntity stu){
-return repo.save(stu);
+import com.example.demo.newentity.NewFileEntity;
+import java.util.*;
 
-@Override
-public List<StudentEntity> getdata(){
-return repo. findAll();
+public class NewfileServiceImpl implements NewfileService{
 
-@Override
-public StudentEntity updatedata(int id, StudentEntity std){
-if(repo.existsById(id)){
-std.setId(id);
-return repo.save(std);
+    private final NewfileRepo repo;
+    @Override
+    public NewfileServiceImpl(NewfileRepo repo){
+        this.repo = repo;
+    }
 
-}
-return null;
+    public NewFileEntity savedata(NewFileEntity st){
+        return repo.save(st);
+    }
 
-@Override
-public SpringApplication delData(int id){
-    repo deleteBy Id(id);
+    @Override
+    public NewFileEntity getidval(Long id){
+        return findById(id);
+    }
+
+    @Override
+    public List<NewFileEntity> getalldata(){
+        return findAll();
+    }
+
+    @Override
+    public NewFileEntity update(Long id,NewFileEntity st){
+        NewFileEntity exist = repo.findById(id).orElse(null);
+
+        if(exist!=null){
+            exist.setName(st.getName());
+            exist.setEmail(st.getEmail());
+            return repo.save(exist);
+        }
+        return null;
+    }
+
+    @Override
+    public void del(Long id){
+        repo.deleteById(id);
+    }
 }
