@@ -15,17 +15,18 @@ public class NewfileServiceImpl implements NewfileService{
  }
  @Override
  public NewfileEntity getidval(Long id) {
-
+        return findById(id);
  }
 
  @Override
  public List<NewtileEntity> getall() {
-
+          return findAll();
  }
 
  @Override
  public NewfileEntity update(Long id, NewfileEntity newfile) {
-
+          
+ }
  @Override
  public void delete(Long id) {
 
