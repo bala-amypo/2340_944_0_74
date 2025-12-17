@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.StudentEntity;
-import com.example.demo.service.Studentservice;
+import com.example.demo.service.StudentService;
 
 @RestController
 public class StudentController {
@@ -33,7 +33,7 @@ public class StudentController {
         return src.id(id);
     }
     @PutMapping("/update/{id}")
-    public StudentEntity funName (@PathVariable int id,@RequestBody Studententity st){
+    public StudentEntity funName (@PathVariable int id,@RequestBody StudentEntity st){
     return src.ids(id,st);
 }    
 @DeleteMapping("/delete/{id}")
