@@ -1,5 +1,11 @@
+package com.example.demo.newservice.mewserviceimpl;
+import java.util.List;
+import org.springframework.stereotype.Service;
+import com.example.demo.newentity.NewfileEntity;
+import com.example.demo.newservice.NewfileService;
+@Service
 public class NewfileServiceImpl implements NewfileService{
-
+ private final NewfileRepo rep;
  @Override
  public NewfileEntity savedata(NewfileEntity newfile) {
 
@@ -20,5 +26,5 @@ public class NewfileServiceImpl implements NewfileService{
  @Override
 public void delete(Long id) {
 
-}
+ }
 }
