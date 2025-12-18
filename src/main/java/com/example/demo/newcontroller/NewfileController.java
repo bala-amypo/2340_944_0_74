@@ -21,11 +21,11 @@ return new ResponseEntity<>(service.saveStudent(student),HttpStatus.CREATED);
 public List<NewfileEntity> getall() {
 return service.getall();
 }
-@GetMapping("/(id}")
+@GetMapping("/{id}")
 public NewfileEntity getStudent(@PathVariable Long id) {
 return service.getidval(id);
 }
-@PutMapping("/(id}")
+@PutMapping("/{id}")
 public Student updateStudent(@PathVariable Long id,@Valid @RequestBody Student student){
 return service.update(id, student);
 }
